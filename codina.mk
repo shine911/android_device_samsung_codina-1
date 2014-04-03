@@ -727,5 +727,9 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
+# Ace 2 settings
+PRODUCT_PACKAGES += \
+    GalaxyAce2Settings
+
 # Precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
