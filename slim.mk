@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 NovaFusion https://github.com/NovaFusion
+# Copyright (C) 2012 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,28 +15,23 @@
 #
 
 # Specify phone tech before including full_phone
-$(call inherit-product, vendor/cm/config/gsm.mk)
+$(call inherit-product, vendor/slim/config/gsm.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := GT-I8160
+PRODUCT_RELEASE_NAME := codina
 
-# Boot animation
+# Bootanimation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/slim/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/codina/full_codina.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := cm_codina
 PRODUCT_DEVICE := codina
-PRODUCT_BRAND := samsung
+PRODUCT_NAME := slim_codina
+PRODUCT_BRAND := Samsung
 PRODUCT_MODEL := GT-I8160
-PRODUCT_MANUFACTURER := samsung
-
-# Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-I8160 TARGET_DEVICE=GT-I8160
-BUILD_ID := MACLAWSTUDIO-$(shell date -u +%Y%m%d)
