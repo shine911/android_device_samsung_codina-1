@@ -62,7 +62,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/codina/shbootimg.mk
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := "console=ttySAC2,115200 consoleblank=0 androidboot.selinux=permissive"
-TARGET_KERNEL_SOURCE := kernel/samsung/codina
+TARGET_KERNEL_SOURCE := kernel/samsung/u8500
 TARGET_KERNEL_CONFIG := cyanogenmod_i8160_defconfig
 #TARGET_PREBUILT_KERNEL := device/samsung/codina/rootfs/kernel
 
