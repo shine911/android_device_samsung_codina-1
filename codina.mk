@@ -19,6 +19,10 @@ LOCAL_PATH := device/samsung/codina
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Ace 2 settings
+PRODUCT_PACKAGES += \
+    GalaxyAce2Settings
+
 ##########################################
 ## Kernel stuff
 ##########################################
@@ -696,13 +700,6 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
-# Storage switch script
- PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/SwapStorages.sh:system/xbin/SwapStorages.sh
- PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.vold.switchablepair=sdcard0,sdcard1 \
-    persist.sys.vold.switchexternal=0
-
 # Misc Packages
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
@@ -726,10 +723,6 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers \
     librs_jni
-
-# Ace 2 settings
-PRODUCT_PACKAGES += \
-    GalaxyAce2Settings
 
 # Precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise

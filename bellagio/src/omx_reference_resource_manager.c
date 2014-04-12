@@ -27,7 +27,7 @@
 
 #include <string.h>
 #include "omx_reference_resource_manager.h"
-#include "omx_base_component.h"
+#include "base/omx_base_component.h"
 #include "queue.h"
 
 /**
