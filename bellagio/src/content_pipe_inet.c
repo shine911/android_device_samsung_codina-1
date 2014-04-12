@@ -112,7 +112,7 @@ static CPresult Open( CPhandle* hContent, CPstring szURI, CP_ACCESSTYPE eAccess 
     pHostInfo = gethostbyname(strHostName);
 
     /* copy address into long */
-    memcpy_unsafe(&nHostAddress, pHostInfo->h_addr, pHostInfo->h_length);
+    memcpy(&nHostAddress, pHostInfo->h_addr, pHostInfo->h_length);
 
     /* fill address struct */
     sAddress.sin_addr.s_addr = nHostAddress;

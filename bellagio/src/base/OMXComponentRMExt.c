@@ -1,5 +1,5 @@
 /**
-  src/OMXComponentRMExt.c
+  src/base/OMXComponentRMExt.c
 
   This extension of the core provides functions for the resoruce manager used to retrieve
 	the quality levels of the components available.

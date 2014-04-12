@@ -1,5 +1,6 @@
 /*
  * Copyright (C) ST-Ericsson AB 2009 - All rights reserved
+ * Copyright (C) 2014 NovaFusion http://novafusion.pl
  * Reproduction and Communication of this document is strictly prohibited
  * unless specifically authorized in writing by ST-Ericsson
  *
@@ -9,7 +10,12 @@
  *
  */
 
+#define LOG_TAG "libblt_hw"
+
+#include <cutils/log.h>
+
 #include <blt_api.h>
+#include <video/b2r2_blt.h>
 
 #include <sys/ioctl.h>
 #include <fcntl.h>
@@ -20,21 +26,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
-#include <video/b2r2_blt.h>
-
-#define LOG_TAG "libblt_hw"
-
-#ifdef ANDROID
-#  include <cutils/log.h>
-#  define LOGE2(...) LOGE(__VA_ARGS__)
-#  define LOGI2(...) LOGI(__VA_ARGS__)
-#else
-#  define LOGE(format) fprintf(stderr, LOG_TAG format "\n")
-#  define LOGE2(format, ...) fprintf(stderr, LOG_TAG format "\n", __VA_ARGS__)
-#  define LOGI(format) printf(LOG_TAG format "\n")
-#  define LOGI2(format, ...) printf(LOG_TAG format "\n", __VA_ARGS__)
-#endif
 
 #define B2R2_BLT_DEV "/dev/b2r2_blt"
 

@@ -1,5 +1,5 @@
 /**
-  src/omx_base_component.c
+  src/base/omx_base_component.c
 
   OpenMAX base_component component. This component does not perform any multimedia
   processing.  It is used as a base_component for new components development.
@@ -820,14 +820,7 @@ OMX_ERRORTYPE omx_base_component_GetComponentVersion(OMX_HANDLETYPE hComponent,
   pComponentVersion->s.nStep = SPECSTEP;
 
   /* Fill spec version (copy from component field) */
-  memcpy_unsafe(pSpecVersion, &omx_component->nVersion, sizeof(OMX_VERSIONTYPE));
-
-  /* Fill UUID with handle address, PID and UID.
-   * This should guarantee uiniqness */
-  uuid[0] = (OMX_U32)omx_component;
-  uuid[1] = getpid();
-  uuid[2] = getuid();
-  memcpy_unsafe(*pComponentUUID, uuid, 3*sizeof(uuid));
+  memcpy(pSpecVersion, &omx_component->nVersion, sizeof(OMX_VERSIONTYPE));
 
   DEBUG(DEB_LEV_FUNCTION_NAME, "Out of %s for component %x\n", __func__, (int)hComponent);
   return OMX_ErrorNone;
@@ -946,7 +939,7 @@ OMX_ERRORTYPE omx_base_component_GetParameter(
       return OMX_ErrorBadPortIndex;
     }
 
-    memcpy_unsafe(pPortDef, &omx_base_component_Private->ports[pPortDef->nPortIndex]->sPortParam, sizeof(OMX_PARAM_PORTDEFINITIONTYPE));
+    memcpy(pPortDef, &omx_base_component_Private->ports[pPortDef->nPortIndex]->sPortParam, sizeof(OMX_PARAM_PORTDEFINITIONTYPE));
     break;
   case OMX_IndexParamPriorityMgmt:
     pPrioMgmt = (OMX_PRIORITYMGMTTYPE*)ComponentParameterStructure;
@@ -1079,7 +1072,7 @@ OMX_ERRORTYPE omx_base_component_SetParameter(
 
       switch(pPortDef->eDomain) {
       case OMX_PortDomainAudio:
-        memcpy_unsafe(&pPortParam->format.audio, &pPortDef->format.audio, sizeof(OMX_AUDIO_PORTDEFINITIONTYPE));
+        memcpy(&pPortParam->format.audio, &pPortDef->format.audio, sizeof(OMX_AUDIO_PORTDEFINITIONTYPE));
         break;
       case OMX_PortDomainVideo:
         pPortParam->format.video.pNativeRender          = pPortDef->format.video.pNativeRender;
@@ -1102,7 +1095,7 @@ OMX_ERRORTYPE omx_base_component_SetParameter(
         pPortParam->format.image.pNativeWindow          = pPortDef->format.image.pNativeWindow;
         break;
       case OMX_PortDomainOther:
-        memcpy_unsafe(&pPortParam->format.other, &pPortDef->format.other, sizeof(OMX_OTHER_PORTDEFINITIONTYPE));
+        memcpy(&pPortParam->format.other, &pPortDef->format.other, sizeof(OMX_OTHER_PORTDEFINITIONTYPE));
         break;
       default:
         DEBUG(DEB_LEV_ERR, "In %s wrong port domain. Out of OpenMAX scope\n",__func__);
