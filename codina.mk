@@ -152,7 +152,7 @@ PRODUCT_COPY_FILES += \
 	
 # OMX
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/omxloaders:system/etc/omxloaders \
+    $(LOCAL_PATH)/prebuilt/etc/omxloaders:system/etc/omxloaders \
     $(LOCAL_PATH)/prebuilt/lib/libnmftimer.so:system/lib/libnmftimer.so \
     $(LOCAL_PATH)/prebuilt/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     $(LOCAL_PATH)/prebuilt/lib/ppp_sterc.so:system/lib/ppp_sterc.so \
