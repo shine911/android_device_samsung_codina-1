@@ -557,9 +557,6 @@ service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0
     class late_start
     disabled
 
-<<<<<<< HEAD
-# end of wifi
-=======
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1 /storage/sdcard1
     class late_start
     disabled
@@ -606,4 +603,3 @@ on property:sys.boot_completed=1
     chown system system /sys/module/mali/parameters/mali_l2_max_reads
     chown system system /sys/module/mali/parameters/pre_allocated_memory_size_max
     chown system system /sys/module/mmc_core/parameters/use_spi_crc
->>>>>>> 048b010... init.samsungcodina.rc update
