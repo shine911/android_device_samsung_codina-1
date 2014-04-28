@@ -19,7 +19,7 @@ LOCAL_PATH := device/samsung/codina
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Ace 2 settings
+# NovaThor settings
 PRODUCT_PACKAGES += \
     NovaThorSettings
 
@@ -664,9 +664,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/LVVEFS_tuning_parameters/Tx_ControlParams_SPEAKER_VT.txt:system/etc/LVVEFS_tuning_parameters/Tx_ControlParams_SPEAKER_VT.txt \
     $(LOCAL_PATH)/prebuilt/etc/LVVEFS_tuning_parameters/Tx_ControlParams_SPEAKER_WB.txt:system/etc/LVVEFS_tuning_parameters/Tx_ControlParams_SPEAKER_WB.txt
 
-# Use the Dalvik VM specific for devices with 512 MB of RAM
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
 # Our devices are HDPI
 PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
@@ -728,5 +725,12 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers \
     librs_jni
 
-# Precise GC data
+# Dalvik VM config for 768MB RAM devices
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=4m
 PRODUCT_TAGS += dalvik.gc.type-precise
