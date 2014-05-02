@@ -1,2 +1,2 @@
-add_lunch_combo aokp_codina-eng
-add_lunch_combo aokp_codina-userdebug
+add_lunch_combo mk_codina-eng
+add_lunch_combo mk_codina-userdebug
