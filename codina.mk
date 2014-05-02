@@ -694,11 +694,8 @@ PRODUCT_PACKAGES += \
     lights.montblanc
 
 # Storage switch script
- PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/SwapStorages.sh:system/xbin/SwapStorages.sh
  PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.vold.switchablepair=sdcard0,sdcard1 \
-    persist.sys.vold.switchexternal=0
+    persist.sys.vold.switchablepair=sdcard0,sdcard1
 
 PRODUCT_PACKAGES += \
     charger \
