@@ -21,7 +21,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # NovaThor settings
 PRODUCT_PACKAGES += \
-    GalaxyAce2Settings
+    NovaThorSettings
 
 ##########################################
 ## Kernel stuff
