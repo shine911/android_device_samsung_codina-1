@@ -156,6 +156,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/lib/libnmftimer.so:system/lib/libnmftimer.so \
     $(LOCAL_PATH)/prebuilt/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     $(LOCAL_PATH)/prebuilt/lib/ppp_sterc.so:system/lib/ppp_sterc.so \
+	$(LOCAL_PATH)/prebuilt/lib/libandroid_runtime.so:system/lib/libandroid_runtime.so \
+	$(LOCAL_PATH)/prebuilt/lib/libdvm.so:system/lib/libdvm.so \
+	$(LOCAL_PATH)/prebuilt/lib/libharfbuzz.so:system/lib/libharfbuzz.so \
+	$(LOCAL_PATH)/prebuilt/lib/libhwui.so:system/lib/libhwui.so \
+    $(LOCAL_PATH)/prebuilt/lib/libnativehelper.so:system/lib/libnativehelper.so \
     $(LOCAL_PATH)/prebuilt/lib/libste_ens_image_tuningdatabase.so:system/lib/libste_ens_image_tuningdatabase.so \
     $(LOCAL_PATH)/prebuilt/lib/libste_ens_video_common.so:system/lib/libste_ens_video_common.so \
     $(LOCAL_PATH)/prebuilt/lib/libste_ext_ens_image_common.so:system/lib/libste_ext_ens_image_common.so \
