@@ -86,5 +86,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
+#Ubuntu needed lib
+    $(LOCAL_PATH)/configs/libandroid_runtime.so:system/lib/libandroid_runtime.so \
+	$(LOCAL_PATH)/configs/libdvm.so:system/lib/libdvm.so \
+	$(LOCAL_PATH)/configs/libharfbuzz.so:system/lib/libharfbuzz.so \
+	$(LOCAL_PATH)/configs/libhwui.so:system/lib/libhwui.so \
+	$(LOCAL_PATH)/configs/libnativehelper.so:system/lib/libnativehelper.so \
 
-$(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
+# Dalvik VM config for 768MB RAM devices
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapstartsize=5m \
+    dalvik.vm.heapgrowthlimit=48m \
+    dalvik.vm.heapsize=128m \
+    dalvik.vm.heaptargetutilization=0.75 \
+    dalvik.vm.heapminfree=512k \
+    dalvik.vm.heapmaxfree=4m
