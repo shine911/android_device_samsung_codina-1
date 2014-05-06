@@ -87,6 +87,7 @@ PRODUCT_COPY_FILES += \
     system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
 
 #Ubuntu needed lib
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libandroid_runtime.so:system/lib/libandroid_runtime.so \
 	$(LOCAL_PATH)/configs/libdvm.so:system/lib/libdvm.so \
 	$(LOCAL_PATH)/configs/libharfbuzz.so:system/lib/libharfbuzz.so \
