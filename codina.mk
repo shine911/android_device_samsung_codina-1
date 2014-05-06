@@ -20,8 +20,8 @@ LOCAL_PATH := device/samsung/codina
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # NovaThor settings
-PRODUCT_PACKAGES += \
-    NovaThorSettings
+#PRODUCT_PACKAGES += \
+#    NovaThorSettings
 
 ##########################################
 ## Kernel stuff
@@ -694,8 +694,8 @@ PRODUCT_PACKAGES += \
     lights.montblanc
 
 # Storage switch script
- PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.vold.switchablepair=sdcard0,sdcard1
+# PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.sys.vold.switchablepair=sdcard0,sdcard1
 
 PRODUCT_PACKAGES += \
     charger \
