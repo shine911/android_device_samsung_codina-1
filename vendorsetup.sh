@@ -1,1 +1,1 @@
-add_lunch_combo codina
+add_lunch_combo cm_codina-userdebug
