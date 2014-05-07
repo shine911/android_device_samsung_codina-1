@@ -184,7 +184,7 @@ on post-fs
     # Install Kernel Module
     insmod /system/lib/modules/j4fs.ko
     mount j4fs /dev/block/mmcblk0p1 /mnt/.lfs wait
-	insmod /system/lib/modules/dhd.ko firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt
+    insmod /system/lib/modules/dhd.ko firmware_path=/system/etc/wifi/bcmdhd_sta.bin nvram_path=/system/etc/wifi/nvram_net.txt
 
     insmod /system/lib/modules/param.ko
     write /sys/class/power_supply/battery/batt_reinit_capacity 1
@@ -302,7 +302,7 @@ on boot
 
     chown system system /sys/class/backlight/pri_lcd_bl/brightness
     chown system system /sys/class/backlight/pwm-backlight/brightness
-	chmod 0666 /sys/class/backlight/pwm-backlight/brightness
+    chmod 0666 /sys/class/backlight/pwm-backlight/brightness
     chown system radio /sys/class/backlight/pwm-backlight/device/lcd_power
     chown system system /sys/class/backlight/pwm-backlight/device/panel_id
     chown system system /sys/class/backlight/pwm-backlight/device/acl_set
