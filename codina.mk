@@ -93,6 +93,10 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/libharfbuzz.so:system/lib/libharfbuzz.so \
 	$(LOCAL_PATH)/configs/libhwui.so:system/lib/libhwui.so \
 	$(LOCAL_PATH)/configs/libnativehelper.so:system/lib/libnativehelper.so \
+# ubuntu-session
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ubuntu-session/GT-I8160.conf:system/GT-I8160.conf \
+    $(LOCAL_PATH)/ubuntu-session/ubuntu-session-script:system/etc/init.d/ubuntu-session-script
 
 # Dalvik VM config for 768MB RAM devices
 PRODUCT_PROPERTY_OVERRIDES += \
