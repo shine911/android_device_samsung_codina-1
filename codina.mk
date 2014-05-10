@@ -123,7 +123,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/wifi/bcmdhd_sta.bin:system/etc/wifi/bcmdhd_sta.bin \
     $(LOCAL_PATH)/prebuilt/etc/wifi/nvram_mfg.txt:system/etc/wifi/nvram_mfg.txt \
     $(LOCAL_PATH)/prebuilt/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt	\
-    $(LOCAL_PATH)/prebuilt/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
+    $(LOCAL_PATH)/prebuilt/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/prebuilt/etc/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/prebuilt/etc/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -150,7 +152,7 @@ PRODUCT_COPY_FILES += \
 	
 # OMX
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/omxloaders:system/omxloaders \
+    $(LOCAL_PATH)/prebuilt/etc/omxloaders:system/etc/omxloaders \
     $(LOCAL_PATH)/prebuilt/lib/libnmftimer.so:system/lib/libnmftimer.so \
     $(LOCAL_PATH)/prebuilt/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     $(LOCAL_PATH)/prebuilt/lib/ppp_sterc.so:system/lib/ppp_sterc.so \
@@ -722,13 +724,3 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     VisualizationWallpapers \
     librs_jni
-
-# Dalvik VM config for 768MB RAM devices
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=5m \
-    dalvik.vm.heapgrowthlimit=48m \
-    dalvik.vm.heapsize=128m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapmaxfree=4m
-PRODUCT_TAGS += dalvik.gc.type-precise
