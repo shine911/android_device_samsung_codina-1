@@ -1,5 +1,9 @@
 import /init.samsungcodina.usb.rc
 
+on early-init
+    start ueventd
+    import /init.b2g.rc
+
 on init
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
@@ -192,6 +196,11 @@ on post-fs
     # loading exFAT-fs drivers
     insmod /system/lib/modules/exfat_core.ko
     insmod /system/lib/modules/exfat_fs.ko
+	
+	#B2G Permission fix
+	chmod 0755 /system/b2g/b2g
+    chmod 0755 /system/b2g/updater
+    chmod 0755 /system/b2g/plugin-container
 
 on post-fs-data
 
